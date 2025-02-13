@@ -24,5 +24,21 @@ def index():
         notes=notes,
     )
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    form = forms.LoginForm()
+
+    if not form.validate_on_submit():
+        return flask.render_template(
+            "login.html",
+            form=form,
+        )
+    user = models.User.query.filter_by(username=form.username.data).first()
+
+    if user and user.authenticate(form.password.data):
+        login_user(user)
+        return flask.redirect(flask.url_for("index"))
+    return flask.redirect(flask.url_for("login", error="Invalid username or password"))
+
 if __name__ == "__main__":
     app.run(debug=True)
