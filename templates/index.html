@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
-{% block body %}
-<a href="{{url_for('login')}}" class="btn btn-primary">login</a>
 
-<a href="{{url_for('register')}}" class="btn btn-primary">register</a>
+{% block title %} Home - Ferrari {% endblock %}
+
+{% block body %}
+<div class="vh-100 d-flex align-items-center justify-content-center bg-image" style="background-image: url('{{ url_for('static', filename='images/Ferrari.jpg') }}'); 
+            background-size: cover; 
+            background-position: center;">
+
+    <div class="text-center">
+        <a href="{{url_for('login')}}" class="btn btn-primary">Login</a>
+        <a href="{{url_for('register')}}" class="btn btn-primary">Register</a>
+    </div>
+
+</div>
 {% endblock %}
