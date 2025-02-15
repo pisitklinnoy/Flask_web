@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-<div><a href="">
+<a href="{{url_for('login')}}" class="btn btn-primary">login</a>
+
+<a href="{{url_for('register')}}" class="btn btn-primary">register</a>
 {% endblock %}
