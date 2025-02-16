@@ -40,6 +40,11 @@ def login():
         return flask.redirect(flask.url_for("index"))
     return flask.redirect(flask.url_for("login", error="Invalid username or password"))
 
+@app.route("/brand", methods=["GET", "POST"])
+def brand():
+        return flask.render_template(
+            "brand.html",
+        )
 
 @app.route("/logout")
 @login_required
