@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Ferrari 499P {% endblock %}
+
+{% block body %}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='ccs/brand.css')}}">
+</head>
+<div class="sidebar bg-black text-white p-3">
+    <h6 class="text-uppercase text-secondary">Racing</h6>
+    <ul class="list-unstyled">
+        <li class="py-2 d-flex justify-content-between align-items-center">
+            <a href="#" class="text-white text-decoration-none">Formula 1</a>
+            <span class="text-white">&rsaquo;</span>
+        </li>
+        <li class="py-2 d-flex justify-content-between align-items-center">
+            <a href="#" class="text-white text-decoration-none">Endurance</a>
+            <span class="text-white">&rsaquo;</span>
+        </li>
+        <li class="py-2 d-flex justify-content-between align-items-center fw-bold">
+            <a href="#" class="text-white text-decoration-none">Esports</a>
+            <span class="text-white">&rsaquo;</span>
+        </li>
+        <li class="py-2 d-flex justify-content-between align-items-center">
+            <a href="#" class="text-white text-decoration-none">Driver Academy</a>
+            <span class="text-white">&rsaquo;</span>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Main Content -->
+<div class="main-content flex-grow-1">
+    <img src="{{ url_for('static', filename='images/ferrari-499p.jpg') }}" class="img-fluid w-100" alt="Ferrari 499P">
+</div>
+</div>
+
+
+
+<!-- JavaScript -->
+<script>
+    document.querySelector(".close-btn").addEventListener("click", function () {
+        document.querySelector(".sidebar").style.transform = "translateX(-100%)";
+    });
+</script>
+{% endblock %}

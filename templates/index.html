@@ -40,7 +40,14 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
+<style>
+    .carousel-item img {
+        height: 630px;
+        /* ปรับความสูงของรูปภาพ */
+        object-fit: cover;
+        /* ทำให้รูปไม่ผิดสัดส่วนและเต็มพื้นที่ */
+    }
+</style>
 <!-- Background Section -->
 <!-- <div class="vh-100 d-flex align-items-center justify-content-center bg-image" style="background-image: url('{{ url_for('static', filename='images/Ferrari.jpg') }}'); 
            background-size: cover; 
