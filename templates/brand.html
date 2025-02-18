@@ -3,18 +3,28 @@
 {% block title %} Brand - Ferrari {% endblock %}
 
 {% block body %}
+<div class="container py-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <input type="text" id="searchBox" class="form-control" placeholder="Search for a car..."
+                onkeyup="searchCars()">
+        </div>
+    </div>
+</div>
+
+
 <div class="container py-5">
     <!-- First Car Section -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center mb-5" data-brand="Ferrari">
         <div class="col-md-6 text-center">
             <a href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='images/ferrari_logo.png') }}" class="img-fluid car-image"
-                    alt="SF90 Stradale">
+                    alt="Ferrari">
             </a>
         </div>
         <div class="col-md-6 text-center">
-            <h2 class="brand-title">SF90 <span class="text-danger">STRADALE</span></h2>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Discover the SF90 Stradale</a>
+            <h2 class="brand-title">Ferrari <span class="text-danger">Brand</span></h2>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">More Information</a>
         </div>
     </div>
 
@@ -24,20 +34,33 @@
     <div class="row align-items-center mb-5">
         <div class="col-md-6 order-md-2 text-center">
             <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/sf90_spider.jpg') }}" class="img-fluid car-image"
+                <img src="{{ url_for('static', filename='images/Lamborghini_Logo.png') }}" class="img-fluid car-image"
                     alt="SF90 Spider">
             </a>
         </div>
         <div class="col-md-6 order-md-1 text-center">
-            <h2 class="brand-title">SF90 <span class="text-danger">SPIDER</span></h2>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Discover the SF90 Spider</a>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Build Your Own</a>
+            <h2 class="brand-title">Lamborghini <span class="text-danger">Brand</span></h2>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">More Information</a>
         </div>
     </div>
 
     <hr class="brand-divider">
-</div>
 
+    <!-- Third Car Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 text-center">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/Porsche_Logo.png') }}" class="img-fluid car-image"
+                    alt="SF90 Stradale">
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="brand-title">Porsche <span class="text-danger">Brand</span></h2>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">More Information</a>
+        </div>
+    </div>
+    <hr class="brand-divider">
+</div>
 <style>
     body {
         background-color: #1d1d1b;
