@@ -1,47 +1,72 @@
 {% extends 'base.html' %}
 
-{% block title %} Ferrari 499P {% endblock %}
+{% block title %} Brand - Ferrari {% endblock %}
 
 {% block body %}
+<div class="container py-5">
+    <!-- First Car Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 text-center">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/ferrari_logo.png') }}" class="img-fluid car-image"
+                    alt="SF90 Stradale">
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="brand-title">SF90 <span class="text-danger">STRADALE</span></h2>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Discover the SF90 Stradale</a>
+        </div>
+    </div>
 
-<head>
-    <link rel="stylesheet" href="{{ url_for('static',filename='ccs/brand.css')}}">
-</head>
-<div class="sidebar bg-black text-white p-3">
-    <h6 class="text-uppercase text-secondary">Racing</h6>
-    <ul class="list-unstyled">
-        <li class="py-2 d-flex justify-content-between align-items-center">
-            <a href="#" class="text-white text-decoration-none">Formula 1</a>
-            <span class="text-white">&rsaquo;</span>
-        </li>
-        <li class="py-2 d-flex justify-content-between align-items-center">
-            <a href="#" class="text-white text-decoration-none">Endurance</a>
-            <span class="text-white">&rsaquo;</span>
-        </li>
-        <li class="py-2 d-flex justify-content-between align-items-center fw-bold">
-            <a href="#" class="text-white text-decoration-none">Esports</a>
-            <span class="text-white">&rsaquo;</span>
-        </li>
-        <li class="py-2 d-flex justify-content-between align-items-center">
-            <a href="#" class="text-white text-decoration-none">Driver Academy</a>
-            <span class="text-white">&rsaquo;</span>
-        </li>
-    </ul>
+    <hr class="brand-divider">
+
+    <!-- Second Car Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-2 text-center">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/sf90_spider.jpg') }}" class="img-fluid car-image"
+                    alt="SF90 Spider">
+            </a>
+        </div>
+        <div class="col-md-6 order-md-1 text-center">
+            <h2 class="brand-title">SF90 <span class="text-danger">SPIDER</span></h2>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Discover the SF90 Spider</a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Build Your Own</a>
+        </div>
+    </div>
+
+    <hr class="brand-divider">
 </div>
 
+<style>
+    body {
+        background-color: #1d1d1b;
+        color: white;
+    }
 
-<!-- Main Content -->
-<div class="main-content flex-grow-1">
-    <img src="{{ url_for('static', filename='images/ferrari-499p.jpg') }}" class="img-fluid w-100" alt="Ferrari 499P">
-</div>
-</div>
+    .brand-title {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+    }
 
+    .car-image {
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+    }
 
+    .car-image:hover {
+        transform: scale(1.05);
+    }
 
-<!-- JavaScript -->
-<script>
-    document.querySelector(".close-btn").addEventListener("click", function () {
-        document.querySelector(".sidebar").style.transform = "translateX(-100%)";
-    });
-</script>
+    .brand-divider {
+        border: 1px solid gray;
+        margin: 40px 0;
+    }
+
+    .btn-outline-light {
+        margin: 10px;
+    }
+</style>
 {% endblock %}
