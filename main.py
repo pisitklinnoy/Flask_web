@@ -73,5 +73,11 @@ def register():
     return flask.redirect(flask.url_for("index"))
 
     return flask.redirect(flask.url_for("login"))
+
+@app.route("/ferrari", methods=["GET", "POST"])
+def Ferrari():
+        return flask.render_template(
+            "ferrari.html",
+        )
 if __name__ == "__main__":
     app.run(debug=True)
