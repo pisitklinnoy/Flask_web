@@ -4,36 +4,32 @@
 
 {% block body %}
 <div class="container py-5">
-    <h1 class="text-center mb-4">FERRARI MODELS</h1>
+    <h1 class="text-center mb-4">FERRARI</h1>
 
     <div class="row">
         <!-- Car 1 -->
         <div class="col-md-3 text-center mb-4">
-            <img src="{{ url_for('static', filename='images/ferrari_sf90.jpg') }}" class="img-fluid">
-            <p class="mt-2">Ferrari SF90 Stradale</p>
-            <p class="text-danger">$500,000</p>
+            <img src="{{ url_for('static', filename='images/ferrari_J50_2016.png') }}" class="img-fluid car-image">
+            <p class="mt-2">Ferrari J50 2016</p>
+            <a href="{{ url_for('ferrari_j50') }}" class="btn btn-danger">View Details</a>
         </div>
 
-        <!-- Car 2 -->
-        <div class="col-md-3 text-center mb-4">
-            <img src="{{ url_for('static', filename='images/ferrari_roma.jpg') }}" class="img-fluid">
-            <p class="mt-2">Ferrari Roma</p>
-            <p class="text-danger">$220,000</p>
-        </div>
-
-        <!-- Car 3 -->
-        <div class="col-md-3 text-center mb-4">
-            <img src="{{ url_for('static', filename='images/ferrari_812.jpg') }}" class="img-fluid">
-            <p class="mt-2">Ferrari 812 Superfast</p>
-            <p class="text-danger">$400,000</p>
-        </div>
-
-        <!-- Car 4 -->
-        <div class="col-md-3 text-center mb-4">
-            <img src="{{ url_for('static', filename='images/ferrari_f8.jpg') }}" class="img-fluid">
-            <p class="mt-2">Ferrari F8 Tributo</p>
-            <p class="text-danger">$280,000</p>
-        </div>
     </div>
 </div>
+<style>
+    body {
+        background-color: #000000;
+        color: white;
+    }
+
+    .btn-danger {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .btn-danger:hover {
+        background-color: #ff0000;
+        color: white;
+    }
+</style>
 {% endblock %}

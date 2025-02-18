@@ -79,5 +79,11 @@ def Ferrari():
         return flask.render_template(
             "ferrari.html",
         )
+
+@app.route("/ferrari/car", methods=["GET", "POST"])
+def ferrari_j50():
+        return flask.render_template(
+            "ferrari_j50.html",
+        )
 if __name__ == "__main__":
     app.run(debug=True)

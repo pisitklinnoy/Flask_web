@@ -1,0 +1,76 @@
+.car-container {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้รองรับ Responsive */
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-image img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px; /* ทำให้รูปมีมุมโค้งเล็กน้อย */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.car-image img:hover {
+    transform: scale(1.05); /* ขยายรูปเล็กน้อยเมื่อ Hover */
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+}
+
+.car-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 30px;
+    align-items: center;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.info-box:hover {
+    background: rgba(255, 0, 0, 0.2);
+}
+
+.config-box {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* 🟢 Responsive Design: ปรับให้แสดงผลดีในหน้าจอเล็ก */
+@media (max-width: 768px) {
+    .car-container {
+        flex-direction: column;
+    }
+    .car-info {
+        grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ในมือถือ */
+        padding-left: 0;
+    }
+    .config-box {
+        grid-column: span 1;
+    }
+}
