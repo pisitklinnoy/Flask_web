@@ -1,0 +1,28 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+}
