@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Ferrari LaFerrari Coupe 2013{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/Ferrari_LaFerrari_Coupe_2013_side_view.png') }}"
+            alt="Ferrari LaFerrari Coupe 2013">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>V12 Hybrid</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>6.3 liters (6,262 cc) + Electric Motor</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>963 HP (combining engine & electric motor)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>900 Nm</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Rear-Wheel Drive</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>352 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>2.6 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR LAFERRARI</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

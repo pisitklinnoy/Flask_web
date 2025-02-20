@@ -80,10 +80,22 @@ def Ferrari():
             "ferrari.html",
         )
 
-@app.route("/ferrari/car", methods=["GET", "POST"])
+@app.route("/ferrari_j50/car", methods=["GET", "POST"])
 def ferrari_j50():
         return flask.render_template(
             "ferrari_j50.html",
+        )
+
+@app.route("/Ferrari_LaFerrari_Aperta_2016/car", methods=["GET", "POST"])
+def Ferrari_LaFerrari_Aperta_2016():
+        return flask.render_template(
+            "Ferrari_LaFerrari_Aperta_2016.html",
+        )
+
+@app.route("/Ferrari_LaFerrari_Coupe_2013/car", methods=["GET", "POST"])
+def Ferrari_LaFerrari_Coupe_2013():
+        return flask.render_template(
+            "Ferrari_LaFerrari_Coupe_2013.html",
         )
 if __name__ == "__main__":
     app.run(debug=True)
