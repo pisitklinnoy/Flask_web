@@ -80,6 +80,12 @@ def Ferrari():
             "ferrari.html",
         )
 
+@app.route("/Lamborghini", methods=["GET", "POST"])
+def Lamborghini():
+        return flask.render_template(
+            "Lamborghini.html",
+        )
+
 @app.route("/ferrari_j50/car", methods=["GET", "POST"])
 def ferrari_j50():
         return flask.render_template(
