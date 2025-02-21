@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Porsche 911 GT3 RS{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/porsche_911_GT3_RS_side_view.png') }}" alt="Porsche 911 GT3 RS">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>4.0L Naturally Aspirated Flat-6</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>4.0 liters (3,996 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>525 HP (533 PS) at 8,500 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>465 Nm at 6,300 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Rear-Engine, Rear-Wheel Drive (RWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>7-Speed PDK (Dual-Clutch)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>296 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>3.2 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR 911 GT3 RS</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
