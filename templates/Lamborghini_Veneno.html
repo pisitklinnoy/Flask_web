@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Lamborghini Veneno{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/Lamborghini_Veneno_side_view.png') }}" alt="Lamborghini Veneno">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>6.5L Naturally Aspirated V12</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>6.5 liters (6,498 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>750 HP (760 PS) at 8,400 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>690 Nm at 5,500 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Mid-Engine, All-Wheel Drive (AWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>7-Speed ISR Automated Manual</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>356 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>2.8 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR VENENO</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
