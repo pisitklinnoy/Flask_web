@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Porsche Carrera GT{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/porsche_carrera_gt_side_view.png') }}" alt="Porsche Carrera GT">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>5.7L Naturally Aspirated V10</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>5.7 liters (5,733 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>612 HP at 8,000 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>590 Nm at 5,750 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Rear-Wheel Drive (RWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>6-Speed Manual</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>330 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>3.9 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR CARRERA GT</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
