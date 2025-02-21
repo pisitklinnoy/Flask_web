@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Lamborghini Huracán{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/Lamborghini_Huracán_side_view.png') }}"
+            alt="Lamborghini Huracán">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>5.2L Naturally Aspirated V10</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>5.2 liters (5,204 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>631 HP (640 PS) at 8,000 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>600 Nm at 6,500 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Mid-Engine, All-Wheel Drive (AWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>7-Speed Dual-Clutch Automatic</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>325 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>2.9 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR HURACÁN</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

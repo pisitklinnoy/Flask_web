@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Lamborghini Reventón{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/Lamborghini_Reventón_side_view.png') }}"
+            alt="Lamborghini Reventón">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>6.5L Naturally Aspirated V12</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>6.5 liters (6,496 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>650 HP (661 PS) at 8,000 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>660 Nm at 6,000 RPM</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>Mid-Engine, All-Wheel Drive (AWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>6-Speed E-Gear Automated Manual</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>356 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>3.4 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR REVENTÓN</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
