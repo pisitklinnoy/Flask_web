@@ -87,6 +87,12 @@ def Lamborghini_Huracán():
             "Lamborghini_Huracán.html",
         )
 
+@app.route("/Lamborghini/Lamborghini_Reventón", methods=["GET", "POST"])
+def Lamborghini_Reventón():
+        return flask.render_template(
+            "Lamborghini_Reventón.html",
+        )
+
 @app.route("/ferrari", methods=["GET", "POST"])
 def Ferrari():
         return flask.render_template(
