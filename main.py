@@ -74,16 +74,23 @@ def register():
 
     return flask.redirect(flask.url_for("login"))
 
-@app.route("/ferrari", methods=["GET", "POST"])
-def Ferrari():
-        return flask.render_template(
-            "ferrari.html",
-        )
 
 @app.route("/Lamborghini", methods=["GET", "POST"])
 def Lamborghini():
         return flask.render_template(
             "Lamborghini.html",
+        )
+
+@app.route("/Lamborghini/Lamborghini_Huracán", methods=["GET", "POST"])
+def Lamborghini_Huracán():
+        return flask.render_template(
+            "Lamborghini_Huracán.html",
+        )
+
+@app.route("/ferrari", methods=["GET", "POST"])
+def Ferrari():
+        return flask.render_template(
+            "ferrari.html",
         )
 
 @app.route("/ferrari_j50/car", methods=["GET", "POST"])
