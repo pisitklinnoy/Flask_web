@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Porsche 918 Spyder{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="car-container">
+    <div class="car-image">
+        <img src="{{ url_for('static', filename='images/porsche_918_spyder_side_view.png') }}" alt="Porsche 918 Spyder">
+    </div>
+    <div class="car-info">
+        <div class="info-box">
+            <h3>ENGINE TYPE</h3>
+            <p>4.6L Naturally Aspirated V8 + 2 Electric Motors</p>
+        </div>
+        <div class="info-box">
+            <h3>ENGINE CAPACITY</h3>
+            <p>4.6 liters (4,593 cc)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX POWER</h3>
+            <p>887 HP (Combined)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX TORQUE</h3>
+            <p>1,280 Nm (Combined)</p>
+        </div>
+        <div class="info-box">
+            <h3>DRIVETRAIN</h3>
+            <p>All-Wheel Drive (AWD)</p>
+        </div>
+        <div class="info-box">
+            <h3>TRANSMISSION</h3>
+            <p>7-Speed PDK (Dual-Clutch)</p>
+        </div>
+        <div class="info-box">
+            <h3>MAX SPEED</h3>
+            <p>340 KM/H</p>
+        </div>
+        <div class="info-box">
+            <h3>0-100 KM/H</h3>
+            <p>2.6 S</p>
+        </div>
+        <div class="config-box">
+            <a href="#" class="btn">CONFIGURE YOUR 918 SPYDER</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
