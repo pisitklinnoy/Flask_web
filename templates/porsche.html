@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Porsche Models{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">PORSCHE</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center mb-4">
+            <img src="{{ url_for('static', filename='images/porsche_911_GT3_RS.png') }}" class="img-fluid car-image">
+            <p class="mt-2">porsche 911 GT3 RS</p>
+            <a href="{{ url_for('porsche_911_GT3_RS') }}" class="btn btn-danger">View Details</a>
+        </div>
+    </div>
+
+    <hr class="brand-divider">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center mb-4">
+            <img src="{{ url_for('static', filename='images/Ferrari_LaFerrari_Aperta_2016.png') }}"
+                class="img-fluid car-image">
+            <p class="mt-2">Ferrari LaFerrari Aperta 2016</p>
+            <a href="{{ url_for('Ferrari_LaFerrari_Aperta_2016') }}" class="btn btn-danger">View Details</a>
+        </div>
+    </div>
+
+    <hr class="brand-divider">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center mb-4">
+            <img src="{{ url_for('static', filename='images/Ferrari_LaFerrari_Coupe_2013.png') }}"
+                class="img-fluid car-image">
+            <p class="mt-2">Ferrari LaFerrari Coupe 2013</p>
+            <a href="{{ url_for('Ferrari_LaFerrari_Coupe_2013') }}" class="btn btn-danger">View Details</a>
+        </div>
+    </div>
+
+    <hr class="brand-divider">
+</div>
+<style>
+    body {
+        background-color: #000000;
+        color: white;
+    }
+
+    .btn-danger {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .btn-danger:hover {
+        background-color: #ff0000;
+        color: white;
+    }
+</style>
+{% endblock %}
