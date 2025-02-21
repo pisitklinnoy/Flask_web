@@ -92,6 +92,12 @@ def Porsche_918_Spyder():
             "Porsche_918_Spyder.html",
         )
 
+@app.route("/Porsche/Carrera_GT", methods=["GET", "POST"])
+def Carrera_GT():
+        return flask.render_template(
+            "Carrera_GT.html",
+        )
+
 @app.route("/Lamborghini", methods=["GET", "POST"])
 def Lamborghini():
         return flask.render_template(
