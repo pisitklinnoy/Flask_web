@@ -92,6 +92,11 @@ def Lamborghini_Reventón():
         return flask.render_template(
             "Lamborghini_Reventón.html",
         )
+@app.route("/Lamborghini/Lamborghini_Veneno", methods=["GET", "POST"])
+def Lamborghini_Veneno():
+        return flask.render_template(
+            "Lamborghini_Veneno.html",
+        )
 
 @app.route("/ferrari", methods=["GET", "POST"])
 def Ferrari():
