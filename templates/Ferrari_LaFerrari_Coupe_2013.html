@@ -40,8 +40,32 @@
             <p>2.6 S</p>
         </div>
         <div class="config-box">
-            <a href="#" class="btn">CONFIGURE YOUR LAFERRARI</a>
+            <button id="favorite-btn" class="btn">ADD TO FAVORITES</button>
         </div>
+
+        <script>
+            document.getElementById("favorite-btn").addEventListener("click", function () {
+                fetch("{{ url_for('add_favorite') }}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        car_name: "Ferrari LaFerrari Coupe 2013",
+                        car_image: "{{ url_for('static', filename='images/Ferrari_LaFerrari_Coupe_2013_side_view.png') }}"
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Added to Favorites!");
+                        } else {
+                            alert("Failed to add to favorites.");
+                        }
+                    });
+            });
+        </script>
     </div>
+</div>
 </div>
 {% endblock %}
