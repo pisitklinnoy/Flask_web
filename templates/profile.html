@@ -6,20 +6,24 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 
 <div class="profile-container">
-    <h1>Welcome, {{ current_user.name }}!</h1>
-    <h2>Your Favorite Cars</h2>
+    <h1>Welcome, {{ user.username }}</h1>
 
-    <div class="favorites-grid">
-        {% for favorite in current_user.favorites %}
-        <div class="favorite-card">
-            <img src="{{ url_for('static', filename='images/' + favorite.car_image) }}" alt="{{ favorite.car_name }}">
-            <h3>{{ favorite.car_name }}</h3>
+    <!-- ปุ่ม Logout -->
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+
+    <h2>Your Favorite Cars</h2>
+    <div class="favorite-cars">
+        {% for car in favorites %}
+        <div class="car-item">
+            <img src="{{ url_for('static', filename=car.car_image) }}" alt="{{ car.car_name }}">
+            <p>{{ car.car_name }}</p>
             <form action="{{ url_for('remove_favorite') }}" method="POST">
-                <input type="hidden" name="car_id" value="{{ favorite.id }}">
-                <button type="submit" class="remove-btn">Remove</button>
+                <input type="hidden" name="car_id" value="{{ car.id }}">
+                <button type="submit" class="btn btn-warning">Remove</button>
             </form>
         </div>
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}

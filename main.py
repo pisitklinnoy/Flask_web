@@ -68,6 +68,8 @@ def brand():
 @login_required
 def logout():
     logout_user()
+    return flask.redirect(flask.url_for("index"))  # กลับไปหน้า index หลัง logout
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
