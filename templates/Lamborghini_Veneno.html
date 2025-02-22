@@ -43,8 +43,32 @@
             <p>2.8 S</p>
         </div>
         <div class="config-box">
-            <a href="#" class="btn">CONFIGURE YOUR VENENO</a>
+            <button id="favorite-btn" class="btn">ADD TO FAVORITES</button>
         </div>
+
+        <script>
+            document.getElementById("favorite-btn").addEventListener("click", function () {
+                fetch("{{ url_for('add_favorite') }}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        car_name: "Lamborghini Veneno",
+                        car_image: "{{ url_for('static', filename='images/Lamborghini_Veneno_side_view.png') }}"
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Added to Favorites!");
+                        } else {
+                            alert("Failed to add to favorites.");
+                        }
+                    });
+            });
+        </script>
     </div>
+</div>
 </div>
 {% endblock %}
