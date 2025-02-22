@@ -97,3 +97,10 @@ class Upload(db.Model):
 server_default=func.now())
     updated_date = mapped_column(sa.DateTime(timezone=True),
 server_default=func.now())
+    
+class Favorite(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    car_name = db.Column(db.String(100), nullable=False)
+    car_image = db.Column(db.String(255), nullable=True)  # เก็บลิงก์รูปภาพ
+    user = db.relationship('User', backref=db.backref('favorites', lazy=True))

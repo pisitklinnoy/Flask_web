@@ -3,8 +3,8 @@ import models
 import forms
 import acl
 
-from flask_login import login_required, login_user, logout_user
-from flask import Response, send_file, abort
+from flask_login import login_required, login_user, logout_user, current_user
+from flask import Response, send_file, abort, jsonify
 
 app = flask.Flask(__name__)
 app.config["SECRET_KEY"] = "This is secret key"
@@ -12,6 +12,24 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 
 models.init_app(app)
 
+@app.route("/add_favorite", methods=["POST"])
+@login_required
+def add_favorite():
+    if not current_user.is_authenticated:
+        return jsonify({"success": False, "error": "User not logged in"}), 401
+    
+    data = flask.request.get_json()
+    car_name = data.get("car_name")
+    car_image = data.get("car_image")
+
+    if not car_name:
+        return jsonify({"success": False, "error": "Car name is required"}), 400
+
+    new_favorite = models.Favorite(user_id=current_user.id, car_name=car_name, car_image=car_image)
+    models.db.session.add(new_favorite)
+    models.db.session.commit()
+
+    return jsonify({"success": True, "message": "Car added to favorites"})
 
 @app.route("/")
 def index():
