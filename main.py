@@ -59,10 +59,10 @@ def login():
     return flask.redirect(flask.url_for("login", error="Invalid username or password"))
 
 @app.route("/brand", methods=["GET", "POST"])
+@login_required
 def brand():
-        return flask.render_template(
-            "brand.html",
-        )
+    return flask.render_template("brand.html")
+
 
 @app.route("/logout")
 @login_required
@@ -162,5 +162,28 @@ def Ferrari_LaFerrari_Coupe_2013():
         return flask.render_template(
             "Ferrari_LaFerrari_Coupe_2013.html",
         )
+
+from flask_login import current_user, login_required
+
+@app.route("/profile")
+@login_required
+def profile():
+    user = current_user
+    favorites = models.Favorite.query.filter_by(user_id=user.id).all()
+    return flask.render_template("profile.html", user=user, favorites=favorites)
+
+@app.route("/remove_favorite", methods=["POST"])
+@login_required
+def remove_favorite():
+    car_id = flask.request.form.get("car_id")
+    favorite = models.Favorite.query.filter_by(id=car_id, user_id=current_user.id).first()
+
+    if favorite:
+        models.db.session.delete(favorite)
+        models.db.session.commit()
+
+    return flask.redirect(flask.url_for("profile"))
+
+
 if __name__ == "__main__":
     app.run(debug=True)

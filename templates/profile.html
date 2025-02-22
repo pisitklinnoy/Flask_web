@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+<div class="profile-container">
+    <h1>Welcome, {{ current_user.name }}!</h1>
+    <h2>Your Favorite Cars</h2>
+
+    <div class="favorites-grid">
+        {% for favorite in current_user.favorites %}
+        <div class="favorite-card">
+            <img src="{{ url_for('static', filename='images/' + favorite.car_image) }}" alt="{{ favorite.car_name }}">
+            <h3>{{ favorite.car_name }}</h3>
+            <form action="{{ url_for('remove_favorite') }}" method="POST">
+                <input type="hidden" name="car_id" value="{{ favorite.id }}">
+                <button type="submit" class="remove-btn">Remove</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
