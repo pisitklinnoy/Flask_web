@@ -7,7 +7,8 @@
 
 <div class="car-container">
     <div class="car-image">
-        <img src="{{ url_for('static', filename='images/Ferrari_LaFerrari_Aperta_2016_side_view.png') }}"alt="Ferrari LaFerrari Aperta 2016">
+        <img src="{{ url_for('static', filename='images/Ferrari_LaFerrari_Aperta_2016_side_view.png') }}"
+            alt="Ferrari LaFerrari Aperta 2016">
     </div>
     <div class="car-info">
         <div class="info-box">
@@ -39,8 +40,32 @@
             <p>2.6 S</p>
         </div>
         <div class="config-box">
-            <a href="#" class="btn">CONFIGURE YOUR LAFERRARI APERTA</a>
+            <button id="favorite-btn" class="btn">ADD TO FAVORITES</button>
         </div>
+
+        <script>
+            document.getElementById("favorite-btn").addEventListener("click", function () {
+                fetch("{{ url_for('add_favorite') }}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        car_name: "Ferrari LaFerrari Aperta 2016",
+                        car_image: "{{ url_for('static', filename='images/Ferrari_LaFerrari_Aperta_2016_side_view.png') }}"
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Added to Favorites!");
+                        } else {
+                            alert("Failed to add to favorites.");
+                        }
+                    });
+            });
+        </script>
     </div>
+</div>
 </div>
 {% endblock %}
