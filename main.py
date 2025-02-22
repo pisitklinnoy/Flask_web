@@ -2,7 +2,7 @@ import flask
 import models
 import forms
 import acl
-
+from flask import flash  # ใช้สำหรับแสดงข้อความแจ้งเตือน
 from flask_login import login_required, login_user, logout_user, current_user
 from flask import Response, send_file, abort, jsonify
 
@@ -58,9 +58,11 @@ def login():
         return flask.redirect(flask.url_for("index"))
     return flask.redirect(flask.url_for("login", error="Invalid username or password"))
 
-@app.route("/brand", methods=["GET", "POST"])
-@login_required
+@app.route("/brand")
 def brand():
+    if not current_user.is_authenticated:
+        flash("Please log in to access this page.", "warning")
+        return flask.redirect(flask.url_for("login"))
     return flask.render_template("brand.html")
 
 
@@ -173,6 +175,7 @@ def profile():
     user = current_user
     favorites = models.Favorite.query.filter_by(user_id=user.id).all()
     return flask.render_template("profile.html", user=user, favorites=favorites)
+
 
 @app.route("/remove_favorite", methods=["POST"])
 @login_required
