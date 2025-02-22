@@ -1,0 +1,65 @@
+    /* ปรับพื้นหลัง */
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    /* ปรับขนาดของ Carousel */
+    .carousel-item img {
+        height: 630px;
+        object-fit: cover;
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* ทำให้ภาพขยายเล็กน้อยขณะเปลี่ยนสไลด์ */
+    .carousel-item.active img {
+        transform: scale(1.05);
+    }
+
+    /* ปรับตัวหนังสือบนภาพ */
+    .carousel-caption {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .carousel-caption h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FFD700;
+    }
+
+    /* ปุ่ม Prev/Next */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Responsive สำหรับมือถือ */
+    @media (max-width: 768px) {
+        .carousel-item img {
+            height: 400px;
+        }
+
+        .carousel-caption {
+            bottom: 10%;
+            padding: 5px 10px;
+        }
+
+        .carousel-caption h2 {
+            font-size: 1.5rem;
+        }
+    }

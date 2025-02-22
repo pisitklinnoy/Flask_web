@@ -3,7 +3,7 @@ import models
 import forms
 import acl
 from flask import flash  # ใช้สำหรับแสดงข้อความแจ้งเตือน
-from flask_login import login_required, login_user, logout_user, current_user
+from flask_login import login_required, login_user, logout_user, current_user, LoginManager
 from flask import Response, send_file, abort, jsonify
 
 app = flask.Flask(__name__)
@@ -172,9 +172,14 @@ from flask_login import current_user, login_required
 @app.route("/profile")
 @login_required
 def profile():
+    if not current_user.is_authenticated:
+        flash("Please log in to access this page.", "warning")  # แจ้งเตือนก่อน redirect
+        return flask.redirect(flask.url_for("login"))
+
     user = current_user
     favorites = models.Favorite.query.filter_by(user_id=user.id).all()
     return flask.render_template("profile.html", user=user, favorites=favorites)
+
 
 
 @app.route("/remove_favorite", methods=["POST"])
