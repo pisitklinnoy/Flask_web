@@ -13,7 +13,7 @@
     <div class="favorite-cars">
         {% for car in favorites %}
         <div class="car-item">
-            <img src="{{ url_for('static', filename=car.car_image) }}" alt="{{ car.car_name }}">
+            <img src="{{car.car_image}}">
             <p>{{ car.car_name }}</p>
             <form action="{{ url_for('remove_favorite') }}" method="POST">
                 <input type="hidden" name="car_id" value="{{ car.id }}">
